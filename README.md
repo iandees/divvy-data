@@ -33,3 +33,21 @@ These are gzipped CSV files that contains all datapoints from all stations for t
 - [July 2015](http://data.openstreetmap.us.s3.amazonaws.com/divvy/all_stations-2015-07.csv.gz) (123MB)
 - [August 2015](http://data.openstreetmap.us.s3.amazonaws.com/divvy/all_stations-2015-08.csv.gz) (108MB)
 - [September 2015](http://data.openstreetmap.us.s3.amazonaws.com/divvy/all_stations-2015-09.csv.gz) (121MB)
+
+### Station Metadata
+
+Stations have names, locations, and sizes. If any of those change, the script writes a line to the station metadata file. This file has the following columns:
+
+Column | Description
+-------|------------
+timestamp | The timestamp for when this data point was published. The format `yyyy-mm-dd hh:mm:ss`.
+station_id | The integer Divvy station ID.
+total_docks | The total number of docks at this station at the published time.
+status | The status for the station. The various statuses aren't documented.
+latitude | The latitude for the station as reported by Divvy.
+longitude | The longitude for the station as reported by Divvy.
+station_name | The name of the station as reported by Divvy.
+
+You can download all available information about stations in one CSV file:
+
+- [2013 through 18 October 2015](//data.openstreetmap.us.s3.amazonaws.com/divvy/all_stations-info.csv.gz)
